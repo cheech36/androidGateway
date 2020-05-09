@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+     <form method="post" action="http://192.168.1.70:9090/drive">
+       {{ form.hidden_tag() }}
+       Speed {{ form.speed }}
+       <div>
+       {{ form.submit(class="btn btn-outline-info") }}
+      </div>
+
+       
+       {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                 {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+     </form>
+
+
+
+
+
+
