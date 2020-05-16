@@ -8,7 +8,7 @@
        {{ form.submit(class="btn btn-outline-info") }}
       </div>
 
-       
+
        {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
@@ -19,9 +19,32 @@
           {% endif %}
         {% endwith %}
      </form>
+     <br>
 
 
 
+     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+     <script src="static/js/directions.js"></script>
 
+     <table>
+            <tr>  <th>  </th>
+                  <th><button type="button" onclick="steer('Forward');"> &#9650 </button></th>
+                  <th>  </th>
+                  
+            </tr>
+            <tr>  
+                  <th><button type="button" onclick="steer('Left');"> &#9666 </button></th>
+                  <th>  </th>
+                  <th><button type="button" onclick="steer('Right');"> &#9656 </button></th>
+            </tr>
+
+            <tr>
+                  <th>  </th>
+                  <th><button type="button" onclick="steer('Backward');">  &#9660 </button></th>
+                  <th>  </th>
+            </tr>
+    </table>
+
+    <button type="button" onclick="steer('Stop');">  STOP </button>
 
 

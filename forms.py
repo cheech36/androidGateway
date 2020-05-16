@@ -7,5 +7,5 @@ class Adjust(FlaskForm):
     #                    default=0,
     #                    validators=[ NumberRange(0, 100, "Out of range") ])
 
-    speed = IntegerField('speed', validators=[NumberRange(0,1000)])
+    speed = IntegerField('speed', validators=[NumberRange(-255,255)])
     submit = SubmitField('Set Speed')
